@@ -1,0 +1,23 @@
+@-webkit-keyframes slide1 {
+    100% { left: 3rem; }
+}
+
+@keyframes slide1 {
+    100% { left: 3rem; }
+}
+
+@-webkit-keyframes slide2 {
+    100% { right: 5rem; }
+}
+
+@keyframes slide2 {
+    100% { right: 5rem; }
+}
+
+@-webkit-keyframes slideMobile {
+    100% { left: 3rem; }
+}
+
+@keyframes slideMobile {
+    100% { left: 3rem; }
+}
