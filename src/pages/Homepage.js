@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import image from '../assets/ProfilePhoto.jpg'
+import experience from '../data/experienceData'
+import ExperienceCard from "../components/ExperienceCard"
 
 import './Homepage.css';
 
@@ -16,19 +18,26 @@ const ImageSection = styled.div`
 
 `;
 
-const MainTitle = styled.h1`
-    color:white;
+const TitleText = styled.div`
+     color:white;
     width: 40%;
     position: absolute;
-    bottom: 6rem;
     left: -1000px;
-    font-size: 15vw;
+    bottom: 6rem;   
 
     -webkit-animation: slide1 0.5s forwards;
     -webkit-animation-delay: 2s;
     animation: slide1 0.5s forwards;
     animation-delay: 0.2s;
+`;
+
+const MainTitle = styled.h1`
+    font-size: 15vw;
 `; 
+
+const SubTitle = styled.h1`
+    font-size: 3vw;
+`;
 
 const ProfileImage = styled.img`
     position: absolute;
@@ -57,12 +66,12 @@ const MobileProfileImage = styled.img`
   
 `;
 
-const About = styled.p`
 
-`;
 
-const Experience = styled.p`
-
+const ExperienceTitle = styled.h1`
+    font-size: 3vw;
+    text-align: right;
+    padding: 0 10px;
 `;
 
 const Projects = styled.p`
@@ -94,18 +103,45 @@ export default function Homepage() {
         return () => window.removeEventListener('resize', handleResize);
     }, [])
 
+    const AboutTitle = styled.h1`
+        font-size: 3vw;
+        padding: 0 10px;
+        margin-top: ${windowDimensions.width < 1000 ? '20px' : '100px'};
+    `;
+    const About = styled.p`
+        font-size: ${windowDimensions.width < 1000 ? '3vw': '1.5vw'};
+        text-align: justify;
+        padding: 0px 10px;
+    `;
     return (
         <HomePage>
             <ImageSection>
                 {   windowDimensions.width < 600 &&
                     <MobileProfileImage src={image}></MobileProfileImage>}
-                <MainTitle>Rupert Carr</MainTitle>
+                    <TitleText>
+                        <MainTitle>Rupert Carr</MainTitle>
+                        <SubTitle>Software Engineer • Computer Science Major</SubTitle>
+                    </TitleText>
                 { windowDimensions.width >= 1000 &&
                     <ProfileImage src={image}></ProfileImage>
                 }
             </ImageSection>
-            <About>Some stuff about rupert Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione facere animi impedit rem labore sint repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis placeat, tempora ex totam, dolore sequi harum eos voluptatibus animi labore officiis minus laboriosam Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione facere animi impedit rem labore sint repellendus ipsa sapiente voluptatem aut excepturi quo itaque, ab earum cumque. Voluptatem beatae id inventore quod voluptate qui deserunt, quis plac</About>
-            <Experience />
+            <AboutTitle>About</AboutTitle>
+            <About>
+                An undergraduate majoring in Computer Science, whilst also having completed modules
+in advanced physics and mathematics at The University of St Andrews. I have an enquiring
+mind and I am able to quickly grasp complex issues ranging from scientific to interpersonal
+issues with students. I am a logical, conscientious and hard worker
+pursuing a career in the technology industry.
+            </About>
+            <ExperienceTitle>Experience</ExperienceTitle>
+            {
+                experience.relevantExperience.map(experience => {
+                    return (
+                        <ExperienceCard experience={experience} />
+                    )
+                })
+            }
             <Projects />
             <Education />
         </HomePage>
