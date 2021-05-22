@@ -32,6 +32,21 @@ const otherExperience = [
         title: "Shop assistant",
         company: "Dorothy House Hospice",
         date: "May-September 2017",
+    },
+    {
+        title: "Computing Society Treasurer",
+        company: "St Andrews Computing Society",
+        date: "September 2020-May 2021",
+    },
+    {
+        title: "Computing Society President",
+        company: "St Andrews Computing Society",
+        date: "May 2021 - Present",
+    },
+    {
+        title: "Badminton Club Social Secretary",
+        company: "St Andrews Badminton Club",
+        date: "September 2019 - May 2020"
     }
 ]
 

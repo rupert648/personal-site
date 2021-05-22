@@ -9,7 +9,8 @@ const Nav = styled.nav`
     height: 65px;
     position: fixed;
     line-height: 65px;
-    text-align: center; 
+    text-align: center;
+    z-index: 100; 
 `;
 
 const Logo = styled(Link)`

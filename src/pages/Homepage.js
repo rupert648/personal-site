@@ -3,8 +3,11 @@ import styled from 'styled-components'
 import image from '../assets/ProfilePhoto.jpg'
 import experience from '../data/experienceData'
 import ExperienceCard from "../components/ExperienceCard"
-
 import './Homepage.css';
+import MobileExperienceCard from '../components/MobileExperienceCard'
+import Slide from 'react-reveal/Slide';
+
+import "./FancyButton.scss"
 
 const HomePage = styled.section`
 `;
@@ -23,7 +26,7 @@ const TitleText = styled.div`
     width: 40%;
     position: absolute;
     left: -1000px;
-    bottom: 6rem;   
+    bottom: 4rem;   
 
     -webkit-animation: slide1 0.5s forwards;
     -webkit-animation-delay: 2s;
@@ -32,7 +35,7 @@ const TitleText = styled.div`
 `;
 
 const MainTitle = styled.h1`
-    font-size: 15vw;
+    font-size: 12vw;
 `; 
 
 const SubTitle = styled.h1`
@@ -66,12 +69,20 @@ const MobileProfileImage = styled.img`
   
 `;
 
-
-
 const ExperienceTitle = styled.h1`
     font-size: 3vw;
     text-align: right;
     padding: 0 10px;
+`;
+
+const ExperienceArea = styled.div`
+    display: block;
+    width:100%;
+`;
+
+const FancyButton = styled.div`
+    width: 100%;
+    margin: auto;
 `;
 
 const Projects = styled.p`
@@ -134,16 +145,30 @@ mind and I am able to quickly grasp complex issues ranging from scientific to in
 issues with students. I am a logical, conscientious and hard worker
 pursuing a career in the technology industry.
             </About>
-            <ExperienceTitle>Experience</ExperienceTitle>
+            <ExperienceTitle>Relevant Experience</ExperienceTitle>
+            <ExperienceArea>
             {
                 experience.relevantExperience.map(experience => {
                     return (
-                        <ExperienceCard experience={experience} />
-                    )
+                        windowDimensions.width > 600 ?
+                            <Slide left><ExperienceCard experience={experience} /></Slide> :
+                            <Slide left><MobileExperienceCard experience={experience} /></Slide>
+                    );
                 })
             }
-            <Projects />
-            <Education />
+            </ExperienceArea>
+            {/* much easier to make this fancy in sass :)*/
+                // will redirrec to an "Experiences page" (eventually)
+            }
+            <FancyButton id="container">
+                <button class="learn-more">
+                    <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Further Experience</span>
+                </button>
+            </FancyButton>
+            <Education>Education</Education>
         </HomePage>
     )
 }
