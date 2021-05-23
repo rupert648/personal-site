@@ -2,12 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Card = styled.div`
+    min-height: 180px;
     background-color: #002a43;
     color: white;
-    margin: 5px 0px;
+    
+    margin: 10px 0px;
     border-radius: 10px;
-    width:100%;
+    width:90%;
     float:right;
+
+    box-shadow: -10px 10px black;
 
     display: flex;
 `;

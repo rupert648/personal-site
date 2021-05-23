@@ -1,0 +1,30 @@
+
+.project-card {
+     width: 35rem;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    min-height: 100px;
+    box-shadow: 10px 10px 10px;    
+
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity,visibility;
+
+    transition: .5s;
+
+    
+}
+
+.project-card:hover {
+    box-shadow: 10px 10px 10px orange;
+}
+
+.project-card.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}

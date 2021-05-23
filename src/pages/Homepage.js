@@ -1,11 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import image from '../assets/ProfilePhoto.jpg'
-import experience from '../data/experienceData'
-import ExperienceCard from "../components/ExperienceCard"
 import './Homepage.css';
-import MobileExperienceCard from '../components/MobileExperienceCard'
 import Slide from 'react-reveal/Slide';
+
+// components
+import MobileExperienceCard from '../components/MobileExperienceCard'
+import ExperienceCard from "../components/ExperienceCard"
+import ProjectCard from "../components/ProjectCard"
+
+// data
+import projects from '../data/projectData';
+import experience from '../data/experienceData'
 
 import "./FancyButton.scss"
 
@@ -81,13 +87,22 @@ const ExperienceArea = styled.div`
 `;
 
 const FancyButton = styled.div`
+`;
+
+const ProjectsTitle = styled.h1`
+    font-size: 3vw;
+    text-align: left;
+    padding: 0 10px;
+`;
+
+const ProjectsArea = styled.p`
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    margin: auto;
+    background-color:  #002a43;;
 `;
 
-const Projects = styled.p`
 
-`;
 
 const Education = styled.p`
 
@@ -101,6 +116,9 @@ function getWindowDimensions() {
         height
     }
 }
+
+
+// will create project page for every single project (eventually)
 
 export default function Homepage() {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
@@ -168,6 +186,16 @@ pursuing a career in the technology industry.
                     <span class="button-text">Further Experience</span>
                 </button>
             </FancyButton>
+            <ProjectsTitle style={{marginTop: windowDimensions.width < 1000 ? 100 : 750}}>Projects</ProjectsTitle>
+            <ProjectsArea>
+                {
+                    projects.map(project => {
+                        return (
+                            <ProjectCard project={project}/>
+                        )
+                    })
+                }
+            </ProjectsArea>
             <Education>Education</Education>
         </HomePage>
     )

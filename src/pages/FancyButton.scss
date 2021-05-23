@@ -12,8 +12,11 @@ $black: #002a43;
 
 
 button {
+
+  width: 100%;
+  margin-top: 20px;
+  float: right;
   position: relative;
-  display: inline-block;
   cursor: pointer;
   outline: none;
   border: 0;
@@ -89,7 +92,7 @@ button {
       }
     }
     .button-text {
-      color: $white;
+      color: orange;
     }
   }
 }
