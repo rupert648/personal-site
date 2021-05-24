@@ -1,4 +1,4 @@
-### Rupert Carr's Personal Site
+# Rupert Carr's Personal Site
 
 I built this site using React and styled components.
 The purpose of this site was to both expand my portfolio and to further develop my web skills in both React and CSS.
