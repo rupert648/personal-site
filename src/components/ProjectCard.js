@@ -8,13 +8,7 @@ const Card = styled.div`
    
 `;
 
-const ImageSection = styled.section`
-    width: 100%;
-    height: 30vh;
-    background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
-    background-position: center top;
-	background-size:cover;   
-`;
+
 
 const TechnologiesArea = styled.div`
     display: block-inline;
@@ -43,10 +37,9 @@ const Title = styled.h1`
     padding-top: 20px;
 `;
 
-const GithubButton = styled.a`
-    margin: 15px;
-    font-weight: light;
-    color: light-grey;
+const GithubButton = styled.div`
+    margin: 5px 15px;
+    font-weight: 300;
 `
 
 const CannotLink = styled.div`
@@ -92,6 +85,14 @@ function ProjectCard(props) {
         observer.observe(domRef.current);
     }, []);
 
+    const ImageSection = styled.section`
+        width: 100%;
+        height: 30vh;
+        background-image: url(${props.project.image});
+        background-position: center top;
+        background-size:cover;   
+    `;
+
     return (
         <div className={`project-card ${isVisible ? 'is-visible' : ''}`} ref={domRef}>
             <div class="card-front">
@@ -110,8 +111,8 @@ function ProjectCard(props) {
             <div>
             {
                 props.project.github !== "" ? 
-                    <GithubButton></GithubButton> :
-                    <CannotLink><p>Cannot link to github</p></CannotLink>
+                    <GithubButton><a style={{color:"green", textDecoration:"none"}} href={props.project.github} rel="noreferrer" target="_blank"><p>Github</p></a></GithubButton> :
+                    <CannotLink><p>Github Unavailable</p></CannotLink>
             }</div>
             </div>
                <AboutSection>{props.project.about}</AboutSection> 
