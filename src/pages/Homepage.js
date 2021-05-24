@@ -8,6 +8,7 @@ import Slide from 'react-reveal/Slide';
 import MobileExperienceCard from '../components/MobileExperienceCard'
 import ExperienceCard from "../components/ExperienceCard"
 import ProjectCard from "../components/ProjectCard"
+import EducationTimeline from "../components/EducationTimeline"
 
 // data
 import projects from '../data/projectData';
@@ -104,8 +105,10 @@ const ProjectsArea = styled.p`
 
 
 
-const Education = styled.p`
-
+const EducationTitle = styled.h1`
+    font-size: 3vw;
+    text-align: right;
+    padding: 0px 10px;
 `;
 
 function getWindowDimensions() {
@@ -196,7 +199,10 @@ pursuing a career in the technology industry.
                     })
                 }
             </ProjectsArea>
-            <Education>Education</Education>
+            <EducationTitle>Education</EducationTitle>
+            <hr />
+            <EducationTimeline />
+            <hr />
         </HomePage>
     )
 }

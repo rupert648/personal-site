@@ -19,6 +19,7 @@ const Card = styled.div`
 const TitleArea = styled.div`
     padding: 5px 20px;
     width: 100%;
+    background-color: #003a5d;
 `;
 
 const CompanyName = styled.h1`
