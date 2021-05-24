@@ -6,6 +6,7 @@ import "./EducationTimeline.scss"
 // data
 import educationData from '../data/educationData.js'
 
+import Slide from 'react-reveal/Slide';
 
 function EducationTimeline(props) {
     return (
@@ -14,18 +15,34 @@ function EducationTimeline(props) {
                 {
                     educationData.map(education => {
                         return (
-                            <li class="event" data-date={education.date}>
-                                <div class="header">
-                                    <p>{education.location}</p>
-                                    <h3>{education.title}</h3>
-                                </div>
-                                <p>{education.about}</p>
-                            </li>
+                            <TimeLineCard education={education} />
                         )
                     })   
                 }
             </ul>
         </div>
+    )
+}
+
+function TimeLineCard(props) {
+    const [isVisible, setVisible] = React.useState(false);
+    const domRef = React.useRef();
+    
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => setVisible(entry.isIntersecting));
+        });
+        observer.observe(domRef.current);
+    })
+    
+    return (
+        <li ref={domRef} className={`event ${isVisible ? 'is-visible' : ''}`} data-date={props.education.date}>
+            <div class="header">
+                <p>{props.education.location}</p>
+                <h3>{props.education.title}</h3>
+            </div>
+            <p>{props.education.about}</p>
+        </li>
     )
 }
 
