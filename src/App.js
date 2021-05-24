@@ -4,10 +4,11 @@ import Navbar from './components/Navbar'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import styled from 'styled-components'
 
+import './App.css'
+
 const MyApp = styled.body`
-  @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     font-family: "Quicksand", sans-serif;
     font-size: 62.5%;
     font-size: 10px;

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import {BsFillEnvelopeOpenFill} from "react-icons/bs"
-import {AiFillGithub, AiFillLinkedin} from "react-icons/ai"
+import {AiFillGithub, AiFillLinkedin, AiFillHome} from "react-icons/ai"
+
+import './Navbar.css'
 
 const Nav = styled.nav`
     width: 100%;
@@ -13,7 +15,7 @@ const Nav = styled.nav`
     z-index: 100; 
 `;
 
-const Logo = styled(Link)`
+const Logo = styled.div`
     float: left;
     width: auto;
     height: auto;
@@ -21,15 +23,6 @@ const Logo = styled(Link)`
     text-decoration: none;
 `;
 
-const LogoText = styled.a`
-    text-decoration: none;
-    color: white;
-    font-size: 2.5rem;
-
-    &:hover {
-        color: orange;
-    }
-`;
 
 const NavLinks = styled.div`
     height: 65px;
@@ -63,11 +56,29 @@ const NavLinkText = styled.a`
 `;
 
 function Navbar() {
+    const [colorChange, setColorchange] = useState(false);
+
+    const changeNavBarColor = () => {
+        if (window.scrollY >= 1000) {
+            setColorchange(true);
+        } else {
+            setColorchange(false);
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
+    window.addEventListener('scroll', changeNavBarColor);
+
     return (
-        <Nav>
-            <Logo to="/">
-                <LogoText>
-                </LogoText>
+        <Nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
+            <Logo onClick={() => scrollToTop()}>
+                <NavLinkText><AiFillHome /></NavLinkText>
             </Logo>
             <NavLinks>
                 <NavLinkList>
