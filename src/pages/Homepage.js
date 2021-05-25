@@ -9,6 +9,7 @@ import MobileExperienceCard from '../components/MobileExperienceCard'
 import ExperienceCard from "../components/ExperienceCard"
 import ProjectCard from "../components/ProjectCard"
 import EducationTimeline from "../components/EducationTimeline"
+import Footer from "../components/Footer"
 
 // data
 import projects from '../data/projectData';
@@ -200,9 +201,9 @@ pursuing a career in the technology industry.
                 }
             </ProjectsArea>
             <EducationTitle>Education</EducationTitle>
-            <hr />
             <EducationTimeline />
             <hr />
+            <Footer />
         </HomePage>
     )
 }

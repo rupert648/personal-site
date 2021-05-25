@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import {BsFillEnvelopeOpenFill} from "react-icons/bs"
@@ -19,7 +19,7 @@ const Logo = styled.div`
     float: left;
     width: auto;
     height: auto;
-    padding-left: 3rem;font-style: italic;
+    padding-left: 3rem;
     text-decoration: none;
 `;
 
@@ -30,8 +30,6 @@ const NavLinks = styled.div`
 `;
 
 const NavLinkList = styled.ul`
-    width:100%;
-    height:65px;
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -39,7 +37,6 @@ const NavLinkList = styled.ul`
 `;
 
 const NavLinkItem = styled.li`
-    width: auto;
     height: 65px;
     padding: 0;
     padding-right: 3rem;
@@ -49,17 +46,39 @@ const NavLinkText = styled.a`
     text-decoration: none;
     color: white;
     line-height:65px;
-    font-size: 2rem;
+    font-size: 1.7rem;
     &:hover {
         color: orange;
     }
 `;
 
+function getWindowDimensions() {
+    const {innerWidth: width, innerHeight: height} = window;
+
+    return {
+        width,
+        height
+    }
+}
+
+
+
 function Navbar() {
     const [colorChange, setColorchange] = useState(false);
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
+
 
     const changeNavBarColor = () => {
-        if (window.scrollY >= 1000) {
+        if (window.scrollY >= (windowDimensions.width / 2)) {
             setColorchange(true);
         } else {
             setColorchange(false);

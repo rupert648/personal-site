@@ -16,9 +16,6 @@ const MyApp = styled.body`
     height:100%;
 `;
 
-const Footer = styled.footer`
-  background-color:black;
-`;
 
 function App() {
   return (
@@ -34,7 +31,6 @@ function App() {
         </Route>
       
       </Switch>
-      <Footer />
     </Router>
   </MyApp>
 
