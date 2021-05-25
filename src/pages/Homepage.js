@@ -110,6 +110,7 @@ const EducationTitle = styled.h1`
     font-size: 3vw;
     text-align: right;
     padding: 0px 10px;
+    margin-top: 50px;
 `;
 
 function getWindowDimensions() {
@@ -203,7 +204,7 @@ pursuing a career in the technology industry.
             <EducationTitle>Education</EducationTitle>
             <EducationTimeline />
             <hr />
-            <Footer />
+            { windowDimensions.width > 900 ? <Footer marginTop={"1050px"} /> : <></>}
         </HomePage>
     )
 }

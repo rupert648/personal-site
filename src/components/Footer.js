@@ -1,16 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FooterArea = styled.footer`
-   position: relative;
-   margin-top: 1050px;
-   width: 100%;
-   background-color: #001020; 
-   color: white;
-   box-sizing: border-box;
-   text-align: left;
-   padding: 45px 50px;
-`;
 
 const FooterLeft = styled.div`
     font-size: 14px;
@@ -56,7 +46,18 @@ const FooterLink1 = styled.a`
     }
 `;
 
-function Footer() {
+function Footer(props) {
+    
+    const FooterArea = styled.footer`
+        position: relative;
+        margin-top: ${props.marginTop};
+        width: 100%;
+        background-color: #001020; 
+        color: white;
+        box-sizing: border-box;
+        text-align: left;
+        padding: 45px 50px;
+    `;
     return (
         <FooterArea>
             <FooterLeft>
