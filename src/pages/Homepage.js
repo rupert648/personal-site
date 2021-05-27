@@ -4,6 +4,9 @@ import image from '../assets/ProfilePhoto.jpg'
 import './Homepage.css';
 import Slide from 'react-reveal/Slide';
 
+// react router
+import {useHistory} from 'react-router-dom';
+
 // components
 import MobileExperienceCard from '../components/MobileExperienceCard'
 import ExperienceCard from "../components/ExperienceCard"
@@ -101,7 +104,7 @@ const ProjectsArea = styled.p`
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background-color:  #002a43;;
+    background-color:  #002a43;
 `;
 
 
@@ -122,7 +125,6 @@ function getWindowDimensions() {
     }
 }
 
-
 // will create project page for every single project (eventually)
 
 export default function Homepage() {
@@ -137,15 +139,22 @@ export default function Homepage() {
         return () => window.removeEventListener('resize', handleResize);
     }, [])
 
+    const history = useHistory();
+
+    const toExperience = () => {
+        let path = 'experience';
+        history.push(path);
+    }
+
     const AboutTitle = styled.h1`
         font-size: 3vw;
-        padding: 0 10px;
+        padding: 0 1rem;
         margin-top: ${windowDimensions.width < 1000 ? '20px' : '100px'};
     `;
     const About = styled.p`
         font-size: ${windowDimensions.width < 1000 ? '3vw': '1.5vw'};
         text-align: justify;
-        padding: 0px 10px;
+        padding: 0px 1rem;
     `;
     return (
         <HomePage>
@@ -174,7 +183,7 @@ pursuing a career in the technology industry.
                 experience.relevantExperience.map(experience => {
                     return (
                         windowDimensions.width > 600 ?
-                            <Slide left><ExperienceCard experience={experience} /></Slide> :
+                            <Slide left><ExperienceCard float="right" experience={experience} /></Slide> :
                             <Slide left><MobileExperienceCard experience={experience} /></Slide>
                     );
                 })
@@ -184,7 +193,7 @@ pursuing a career in the technology industry.
                 // will redirrec to an "Experiences page" (eventually)
             }
             <FancyButton id="container">
-                <button class="learn-more">
+                <button class="learn-more" onClick={toExperience}>
                     <span class="circle" aria-hidden="true">
                     <span class="icon arrow"></span>
                     </span>

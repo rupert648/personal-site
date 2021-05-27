@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
 import {BsFillEnvelopeOpenFill} from "react-icons/bs"
 import {AiFillGithub, AiFillLinkedin, AiFillHome} from "react-icons/ai"
+import {useHistory} from 'react-router-dom';
 
 import './Navbar.css'
 
@@ -21,6 +21,8 @@ const Logo = styled.div`
     height: auto;
     padding-left: 3rem;
     text-decoration: none;
+
+    cursor: pointer;
 `;
 
 
@@ -67,6 +69,8 @@ function Navbar() {
     const [colorChange, setColorchange] = useState(false);
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
+    const history = useHistory();
+
     useEffect(() => {
         function handleResize() {
             setWindowDimensions(getWindowDimensions());
@@ -85,6 +89,15 @@ function Navbar() {
         }
     };
 
+    const homeButton = () => {
+        if (window.location.pathname !== "/") {
+            // redirrect to homepage ('/')
+            history.push('/');
+        } else {
+            scrollToTop();
+        }
+    }
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -95,8 +108,8 @@ function Navbar() {
     window.addEventListener('scroll', changeNavBarColor);
 
     return (
-        <Nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
-            <Logo onClick={() => scrollToTop()}>
+        <Nav className={colorChange || window.location.pathname !== "/" ? 'navbar colorChange' : 'navbar'}>
+            <Logo onClick={() => homeButton()}>
                 <NavLinkText><AiFillHome /></NavLinkText>
             </Logo>
             <NavLinks>

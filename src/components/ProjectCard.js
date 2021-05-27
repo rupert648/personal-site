@@ -1,14 +1,11 @@
 import React, {useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
+import {useHistory} from 'react-router-dom';
+
+import technologyColors from '../data/technologyColors'
 
 import "./ProjectCard.css"
-
-const Card = styled.div`
-   
-`;
-
-
 
 const TechnologiesArea = styled.div`
     display: block-inline;
@@ -61,23 +58,13 @@ const AboutSection = styled.p`
     margin-bottom: 20px;
 `;
 
-const technologyColors = {
-    Actix: "#BAD5F5",
-    VueJS: "#F2C986",
-    Postgres: "#E1C1C1",
-    Haskell: "#EADD86",
-    React: "#AFEAE5",
-    NodeJS: "#BAD5F5",
-    MongoDB: "#F2C986",
-    MariaDB: "#F2C986",
-    SemanticUI: "#AFEAE5",
-    StyledComponents: "#E1C1C",
-    SASS: "#F2C986",
-}
 
 function ProjectCard(props) {
     const [isVisible, setVisible] = React.useState(false);
     const domRef = React.useRef();
+
+    const history = useHistory();
+
     React.useEffect(() => {
         const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setVisible(entry.isIntersecting));
@@ -93,9 +80,13 @@ function ProjectCard(props) {
         background-size:cover;   
     `;
 
+    const redirr = () => {
+        history.push(`/project/${props.project.id}`)
+    }
+
     return (
-        <div className={`project-card ${isVisible ? 'is-visible' : ''}`} ref={domRef}>
-            <div class="card-front">
+        <div onClick={redirr} className={`project-card ${isVisible ? 'is-visible' : ''}`} ref={domRef}>
+            <div className="card-front">
             <ImageSection/>
             <TechnologiesArea>
                 {

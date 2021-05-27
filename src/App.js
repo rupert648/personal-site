@@ -1,8 +1,10 @@
 import Homepage from './pages/Homepage'
-import Contact from './pages/Contact'
+import Experience from './pages/Experience'
 import Navbar from './components/Navbar'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import styled from 'styled-components'
+
+import ProjectPage from './pages/ProjectPage'
 
 import './App.css'
 
@@ -23,13 +25,14 @@ function App() {
       <Router>
         <Navbar />      
       <Switch>
-        <Route path="/contact">
-          <Contact />
+        <Route path="/experience">
+          <Experience />
+        </Route>
+        <Route path="/project/:id" children={<ProjectPage />}>
         </Route>
         <Route path="/">
           <Homepage></Homepage>
         </Route>
-      
       </Switch>
     </Router>
   </MyApp>

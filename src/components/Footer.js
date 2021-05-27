@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import {AiOutlineDownload} from 'react-icons/ai'
 
 const FooterLeft = styled.div`
     font-size: 14px;
@@ -22,7 +22,6 @@ const FooterLinks = styled.p`
 `;
 
 const FooterLink = styled.a`
-    display; inline-block;
     line-height: 1.8;
     text-decoration: none;
     transition: ease .25s;
@@ -36,7 +35,6 @@ const FooterLink = styled.a`
 `;
 
 const FooterLink1 = styled.a`
-    display; inline-block;
     line-height: 1.8;
     text-decoration: none;
     transition: ease .25s;
@@ -44,6 +42,20 @@ const FooterLink1 = styled.a`
     &:before {
         content: none;
     }
+`;
+
+const Download = styled.a`
+    color: white;
+    font-size: 2rem;
+    margin: 0px;
+    line-height: 1.8;
+    cursor: pointer;
+`;
+
+const DownloadText = styled.p`
+    font-size: 1rem;
+    display: inline-block;
+    padding-left: 10px;
 `;
 
 function Footer(props) {
@@ -61,11 +73,13 @@ function Footer(props) {
     return (
         <FooterArea>
             <FooterLeft>
+                <Download href='/files/RupertCarrCV.pdf' target="_blank" download><AiOutlineDownload></AiOutlineDownload><DownloadText>Download my CV</DownloadText></Download>
                 <FooterLinks>
                     <FooterLink1 className="link1">Home</FooterLink1>
                     <FooterLink>About</FooterLink>
                     <FooterLink>Experience</FooterLink>
                     <FooterLink>Education</FooterLink>
+                    <FooterLink>See CV</FooterLink>
                 </FooterLinks>
                 <Name>Rupert Carr</Name>
             </FooterLeft>
