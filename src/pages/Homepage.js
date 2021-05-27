@@ -19,6 +19,7 @@ import projects from '../data/projectData';
 import experience from '../data/experienceData'
 
 import "./FancyButton.scss"
+import stAndrews from '../assets/standrews.jpg'
 
 const HomePage = styled.section`
 `;
@@ -26,7 +27,7 @@ const HomePage = styled.section`
 const ImageSection = styled.div`
     width: 100%;
     height: 100vh;
-    background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0, 42, 67, 1)), url(${stAndrews});
     background-position: center top;
 	background-size:cover;    
 
@@ -125,7 +126,7 @@ function getWindowDimensions() {
     }
 }
 
-// will create project page for every single project (eventually)
+const isFirefox = typeof InstallTrigger !== 'undefined';
 
 export default function Homepage() {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
@@ -213,7 +214,7 @@ pursuing a career in the technology industry.
             <EducationTitle>Education</EducationTitle>
             <EducationTimeline />
             <hr />
-            { windowDimensions.width > 900 ? <Footer marginTop={"1050px"} /> : <></>}
+            { windowDimensions.width > 900 ? <Footer marginTop={isFirefox ? "1050px" : "0px"} /> : <></>}
         </HomePage>
     )
 }
