@@ -21,28 +21,28 @@ const FooterLinks = styled.p`
     transition: ease .25s;
 `;
 
-const FooterLink = styled.a`
-    line-height: 1.8;
-    text-decoration: none;
-    transition: ease .25s;
+// const FooterLink = styled.a`
+//     line-height: 1.8;
+//     text-decoration: none;
+//     transition: ease .25s;
 
-    &:before {
-        content: "•";
-        padding-left: 5px;
-        display: inline-block;
-        padding-right: 5px;
-    }
-`;
+//     &:before {
+//         content: "•";
+//         padding-left: 5px;
+//         display: inline-block;
+//         padding-right: 5px;
+//     }
+// `;
 
-const FooterLink1 = styled.a`
-    line-height: 1.8;
-    text-decoration: none;
-    transition: ease .25s;
+// const FooterLink1 = styled.a`
+//     line-height: 1.8;
+//     text-decoration: none;
+//     transition: ease .25s;
 
-    &:before {
-        content: none;
-    }
-`;
+//     &:before {
+//         content: none;
+//     }
+// `;
 
 const Download = styled.a`
     color: white;
@@ -75,11 +75,11 @@ function Footer(props) {
             <FooterLeft>
                 <Download href='/files/RupertCarrCV.pdf' target="_blank" download><AiOutlineDownload></AiOutlineDownload><DownloadText>Download my CV</DownloadText></Download>
                 <FooterLinks>
-                    <FooterLink1 className="link1">Home</FooterLink1>
+                    {/* <FooterLink1 className="link1">Home</FooterLink1>
                     <FooterLink>About</FooterLink>
                     <FooterLink>Experience</FooterLink>
                     <FooterLink>Education</FooterLink>
-                    <FooterLink>See CV</FooterLink>
+                    <FooterLink>See CV</FooterLink> */}
                 </FooterLinks>
                 <Name>Rupert Carr</Name>
             </FooterLeft>

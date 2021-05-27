@@ -1,12 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import "./EducationTimeline.scss"
 
 // data
 import educationData from '../data/educationData.js'
 
-import Slide from 'react-reveal/Slide';
 
 function EducationTimeline(props) {
     return (

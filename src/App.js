@@ -1,7 +1,7 @@
 import Homepage from './pages/Homepage'
 import Experience from './pages/Experience'
 import Navbar from './components/Navbar'
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import styled from 'styled-components'
 
 import ProjectPage from './pages/ProjectPage'
