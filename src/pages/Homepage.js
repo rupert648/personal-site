@@ -126,7 +126,7 @@ function getWindowDimensions() {
     }
 }
 
-// will create project page for every single project (eventually)
+const isFirefox = typeof InstallTrigger !== 'undefined';
 
 export default function Homepage() {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
@@ -214,7 +214,7 @@ pursuing a career in the technology industry.
             <EducationTitle>Education</EducationTitle>
             <EducationTimeline />
             <hr />
-            { windowDimensions.width > 900 ? <Footer marginTop={"1050px"} /> : <></>}
+            { windowDimensions.width > 900 ? <Footer marginTop={isFirefox ? "1050px" : "0px"} /> : <></>}
         </HomePage>
     )
 }
