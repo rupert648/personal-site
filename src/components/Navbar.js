@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import {BsFillEnvelopeOpenFill} from "react-icons/bs"
+// import {BsFillEnvelopeOpenFill} from "react-icons/bs"
 import {AiFillGithub, AiFillLinkedin, AiFillHome} from "react-icons/ai"
 import {useHistory} from 'react-router-dom';
 

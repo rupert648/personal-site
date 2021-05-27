@@ -21,28 +21,28 @@ const FooterLinks = styled.p`
     transition: ease .25s;
 `;
 
-const FooterLink = styled.a`
-    line-height: 1.8;
-    text-decoration: none;
-    transition: ease .25s;
+// const FooterLink = styled.a`
+//     line-height: 1.8;
+//     text-decoration: none;
+//     transition: ease .25s;
 
-    &:before {
-        content: "•";
-        padding-left: 5px;
-        display: inline-block;
-        padding-right: 5px;
-    }
-`;
+//     &:before {
+//         content: "•";
+//         padding-left: 5px;
+//         display: inline-block;
+//         padding-right: 5px;
+//     }
+// `;
 
-const FooterLink1 = styled.a`
-    line-height: 1.8;
-    text-decoration: none;
-    transition: ease .25s;
+// const FooterLink1 = styled.a`
+//     line-height: 1.8;
+//     text-decoration: none;
+//     transition: ease .25s;
 
-    &:before {
-        content: none;
-    }
-`;
+//     &:before {
+//         content: none;
+//     }
+// `;
 
 const Download = styled.a`
     color: white;

@@ -89,7 +89,6 @@ function ProjectPage() {
     const {id} = useParams();
 
     useEffect(() => {
-        console.log(id);
         let currentProject;
 
         projectData.forEach(project => {
@@ -108,7 +107,7 @@ function ProjectPage() {
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [])
+    }, [id])
 
 
     const ImageSection = styled.div`
