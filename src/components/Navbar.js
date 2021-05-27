@@ -115,7 +115,7 @@ function Navbar() {
             <NavLinks>
                 <NavLinkList>
                     {/* will need to redirrect to email form */}
-                    <NavLinkItem><NavLinkText href=""><BsFillEnvelopeOpenFill/></NavLinkText></NavLinkItem>
+                    {/* <NavLinkItem><NavLinkText href=""><BsFillEnvelopeOpenFill/></NavLinkText></NavLinkItem> */}
                     <NavLinkItem><NavLinkText href="https://github.com/rupert648/" target="_blank"><AiFillGithub/></NavLinkText></NavLinkItem>
                     <NavLinkItem><NavLinkText href="https://www.linkedin.com/in/rupert-carr-4b88241b6/" target="_blank"><AiFillLinkedin/></NavLinkText></NavLinkItem>
                 </NavLinkList>

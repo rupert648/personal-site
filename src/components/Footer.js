@@ -75,11 +75,11 @@ function Footer(props) {
             <FooterLeft>
                 <Download href='/files/RupertCarrCV.pdf' target="_blank" download><AiOutlineDownload></AiOutlineDownload><DownloadText>Download my CV</DownloadText></Download>
                 <FooterLinks>
-                    <FooterLink1 className="link1">Home</FooterLink1>
+                    {/* <FooterLink1 className="link1">Home</FooterLink1>
                     <FooterLink>About</FooterLink>
                     <FooterLink>Experience</FooterLink>
                     <FooterLink>Education</FooterLink>
-                    <FooterLink>See CV</FooterLink>
+                    <FooterLink>See CV</FooterLink> */}
                 </FooterLinks>
                 <Name>Rupert Carr</Name>
             </FooterLeft>
