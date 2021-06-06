@@ -13,7 +13,6 @@ const Page = styled.div`
 const TitleText = styled.h1`
     width: 100%;
     color: black;
-    font-size: 6rem;
 `;
 
 const TechnologyItem = styled.div`
@@ -125,7 +124,11 @@ function ProjectPage() {
                 <ImageSection />
                 <hr />
                 <div style={{width: windowDimensions.width < 600 ? "80%" : "60%", margin: 'auto'}}>
-                <TitleText>{project.title}</TitleText>
+                <TitleText
+                    style={{fontSize: windowDimensions.width < 900 ? "3rem" : "5rem"}}
+                >   
+                    {project.title}
+                </TitleText>
                     {
                         project.technologies.map(technology => {
 

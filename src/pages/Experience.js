@@ -6,6 +6,7 @@ import Slide from 'react-reveal/Slide';
 import ExperienceCard from '../components/ExperienceCard'
 import MobileExperienceCard from '../components/MobileExperienceCard'
 import OtherExperienceCard from '../components/OtherExperienceCard'
+import MobileOtherExperienceCard from '../components/MobileOtherExperienceCard'
 
 // data
 import experience from '../data/experienceData'
@@ -13,17 +14,17 @@ import experience from '../data/experienceData'
 const RelevantExperience = styled.h1`
     padding: 5rem 2rem 0 2rem;
     color: black;
-    font-size: 6rem;
+    font-size: 3rem;
 `;
 
 const RelevantExperienceArea = styled.div`
     padding-left: 2rem;
 `;
 
-const OtherExperience = styled.h2`
+const OtherExperience = styled.h1`
     padding: 5rem 2rem 0 2rem;
     color: black;
-    font-size: 4rem;
+    font-size: 3rem;
 `;
 
 const OtherExperienceArea = styled.div`
@@ -66,11 +67,14 @@ function Experience() {
             }
             </RelevantExperienceArea>
             <OtherExperience>Other Experience</OtherExperience>
+            
             <OtherExperienceArea>
             {
                 experience.otherExperience.map(experience => {
                     return (
-                        <Slide left><OtherExperienceCard experience={experience} /></Slide>
+                        windowDimensions.width > 800 ? 
+                            <Slide left><OtherExperienceCard experience={experience} /></Slide> :
+                            <Slide left><MobileOtherExperienceCard experience={experience} /></Slide>
                     )
                 })
             }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import {useHistory} from 'react-router-dom';
 
@@ -58,17 +58,36 @@ const AboutSection = styled.p`
 `;
 
 
+function getWindowDimensions() {
+    const {innerWidth: width, innerHeight: height} = window;
+
+    return {
+        width,
+        height
+    }
+}
+
 function ProjectCard(props) {
     const [isVisible, setVisible] = React.useState(false);
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
+
     const domRef = React.useRef();
 
     const history = useHistory();
 
-    React.useEffect(() => {
+    useEffect(() => {
         const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => setVisible(entry.isIntersecting));
         });
         observer.observe(domRef.current);
+
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    
     }, []);
 
     const ImageSection = styled.section`
@@ -84,7 +103,12 @@ function ProjectCard(props) {
     }
 
     return (
-        <div onClick={redirr} className={`project-card ${isVisible ? 'is-visible' : ''}`} ref={domRef}>
+        <div 
+            onClick={redirr}
+            className={`project-card ${isVisible ? 'is-visible' : ''}`}
+            ref={domRef}
+            style={{width: windowDimensions.width < 600 ? "90%" : "35rem"}}
+        >
             <div className="card-front">
             <ImageSection/>
             <TechnologiesArea>
