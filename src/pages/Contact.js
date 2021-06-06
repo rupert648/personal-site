@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+// icons
+import { MdEmail } from 'react-icons/md'
+import { HiLocationMarker } from 'react-icons/hi'
+import { AiFillPhone, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
+
 import "./Contact.scss"
 
 const ContactPage = styled.div`
@@ -12,7 +17,7 @@ const ContactPage = styled.div`
     align-items: center;
     justify-content: center;
     background: #003a5d;
-    height: 100%;
+    height: 100vh;
 `;
 
 const Area = styled.div`
@@ -55,9 +60,51 @@ function Contact() {
     return (
         <ContactPage>
             <Area>
-                <ContactInfo>
-                    <h1>Contact Information</h1>
-                </ContactInfo>
+                <div class="contact_info">
+                <h3 class="title">
+                    Contact Info
+                </h3>
+
+                <ul class="icons_wrapp">
+                    <li>
+                        <div class="icon">
+                            <HiLocationMarker />
+                        </div>
+                        <div class="text">
+                            Bath, United Kingdom
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <MdEmail />
+                        </div>
+                        <div class="text">
+                            rupertcarr@hotmail.co.uk
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <AiFillPhone />
+                        </div>
+                        <div class="text">
+                            +447946068206
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="soci_wrap">
+                    <li>
+                        <a href="https://github.com/rupert648/" target="_blank" rel="noreferrer">
+                            <AiFillGithub />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/rupert-carr-4b88241b6/" target="_blank" rel="noreferrer">
+                            <AiFillLinkedin />
+                        </a>
+                    </li>
+                </ul>
+            </div>
                 <FormArea>
                     <Title>Email me!</Title>
                     <div class="form_field">

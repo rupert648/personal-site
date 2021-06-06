@@ -1,3 +1,66 @@
+.contact_info {
+    position: relative;
+    width: 230px;
+    flex: 0 0 230px;
+    background: #002a43;
+    color: #f6f6f6;
+    margin-left: calc(-230px / 2 - 30px);
+    padding: 25px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+
+    .title {
+      font-size: 24px;
+      margin: 0px;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+    .icons_wrapp {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      margin-bottom: 30px;
+      li {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 25px;
+        .icon {
+            vertical-align: middle;
+            font-size: 24px;
+            width: 32px;
+            color: orange;
+        }
+        .text {
+          vertical-align: middle;
+          line-height: 1.4;
+          font-size: 14px;
+        }
+      }
+    }
+    .soci_wrap {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      display: flex;
+      position: absolute;
+      bottom: 25px;
+      li {
+        margin: 0px 10px;
+        a {
+          color: #f4f4f4;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          font-size: 32px;
+          &:hover {
+            color: orange;
+          }
+          .material-icons-outlined {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+
 
  .form_field {
       position: relative;
