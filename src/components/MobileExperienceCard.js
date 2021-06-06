@@ -13,7 +13,7 @@ const Card = styled.div`
 `;
 
 const TitleArea = styled.div`
-    padding: 5px 20px;
+    padding: 10px 20px;
     width: 100%;
 `;
 
@@ -26,7 +26,7 @@ const CompanyName = styled.h1`
 const RoleTitle = styled.h1`
     margin: 0;
     font-weight: bold;
-    font-size: 3vw;
+    font-size: 1rem;
 `;
 
 const Date = styled.h2`
@@ -36,13 +36,13 @@ const Date = styled.h2`
 `;
 
 const DescriptionArea = styled.div`
-    padding: 2px 20px;
+    padding: 20px 20px;
 `;
 
 const Description = styled.p`
     font-style: normal;
     font-weight: 500;
-    font-size: 3vw;
+    font-size: 1rem;
     text-align: left;
 `;
 

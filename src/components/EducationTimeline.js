@@ -11,7 +11,7 @@ function EducationTimeline(props) {
         <div id="timeline-content">
             <ul class="timeline">
                 {
-                    educationData.map(education => {
+                    educationData.reverse().map(education => {
                         return (
                             <TimeLineCard education={education} />
                         )

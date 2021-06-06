@@ -12,6 +12,7 @@ import MobileExperienceCard from '../components/MobileExperienceCard'
 import ExperienceCard from "../components/ExperienceCard"
 import ProjectCard from "../components/ProjectCard"
 import EducationTimeline from "../components/EducationTimeline"
+import EducationTimelineMobile from "../components/EducationTimelineMobile"
 import Footer from "../components/Footer"
 
 // data
@@ -27,7 +28,7 @@ const HomePage = styled.section`
 const ImageSection = styled.div`
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0, 42, 67, 1)), url(${stAndrews});
+    background-image: linear-gradient(to bottom, rgba(0,42,67,0.5), rgba(220, 128, 0, 0.5)), url(${stAndrews});
     background-position: center top;
 	background-size:cover;    
 
@@ -82,7 +83,7 @@ const MobileProfileImage = styled.img`
 `;
 
 const ExperienceTitle = styled.h1`
-    font-size: 3vw;
+    font-size: 2rem;
     text-align: right;
     padding: 0 10px;
 `;
@@ -96,7 +97,7 @@ const FancyButton = styled.div`
 `;
 
 const ProjectsTitle = styled.h1`
-    font-size: 3vw;
+    font-size: 2rem;
     text-align: left;
     padding: 0 10px;
 `;
@@ -111,7 +112,7 @@ const ProjectsArea = styled.p`
 
 
 const EducationTitle = styled.h1`
-    font-size: 3vw;
+    font-size: 2rem;
     text-align: right;
     padding: 0px 10px;
     margin-top: 50px;
@@ -148,7 +149,7 @@ export default function Homepage() {
     }
 
     const AboutTitle = styled.h1`
-        font-size: 3vw;
+        font-size: 2rem;
         padding: 0 1rem;
         margin-top: ${windowDimensions.width < 1000 ? '20px' : '100px'};
     `;
@@ -212,7 +213,11 @@ pursuing a career in the technology industry.
                 }
             </ProjectsArea>
             <EducationTitle>Education</EducationTitle>
-            <EducationTimeline />
+            {
+                windowDimensions.width > 900 ? 
+                    <EducationTimeline /> :
+                    <EducationTimelineMobile />
+            }
             <hr />
             { windowDimensions.width > 900 ? <Footer marginTop={isFirefox ? "1050px" : "0px"} /> : <></>}
         </HomePage>
