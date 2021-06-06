@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 // import {BsFillEnvelopeOpenFill} from "react-icons/bs"
-import {AiFillGithub, AiFillLinkedin, AiFillHome} from "react-icons/ai"
+import {AiFillGithub, AiFillLinkedin, AiFillHome, AiFillMessage} from "react-icons/ai"
 import {useHistory} from 'react-router-dom';
 
 import './Navbar.css'
@@ -116,6 +116,7 @@ function Navbar() {
                 <NavLinkList>
                     {/* will need to redirrect to email form */}
                     {/* <NavLinkItem><NavLinkText href=""><BsFillEnvelopeOpenFill/></NavLinkText></NavLinkItem> */}
+                    <NavLinkItem><NavLinkText href="/contact"><AiFillMessage /></NavLinkText></NavLinkItem>
                     <NavLinkItem><NavLinkText href="https://github.com/rupert648/" target="_blank"><AiFillGithub/></NavLinkText></NavLinkItem>
                     <NavLinkItem><NavLinkText href="https://www.linkedin.com/in/rupert-carr-4b88241b6/" target="_blank"><AiFillLinkedin/></NavLinkText></NavLinkItem>
                 </NavLinkList>

@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import styled from 'styled-components'
 
 import ProjectPage from './pages/ProjectPage'
+import Contact from './pages/Contact'
 
 import './App.css'
 
@@ -29,6 +30,9 @@ function App() {
           <Experience />
         </Route>
         <Route path="/project/:id" children={<ProjectPage />}>
+        </Route>
+        <Route path="/contact" children={<Contact />}>
+
         </Route>
         <Route path="/">
           <Homepage></Homepage>

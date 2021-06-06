@@ -39,7 +39,7 @@ const TitleText = styled.div`
     width: 40%;
     position: absolute;
     left: -1000px;
-    bottom: 4rem;   
+    bottom: 4rem;  
 
     -webkit-animation: slide1 0.5s forwards;
     -webkit-animation-delay: 2s;
